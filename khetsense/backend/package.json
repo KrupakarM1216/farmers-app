@@ -1,0 +1,17 @@
+{
+  "name": "khetsense-backend",
+  "version": "1.0.0",
+  "description": "AI-powered crop advisory agent for Indian farmers",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  }
+}

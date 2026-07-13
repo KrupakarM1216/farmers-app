@@ -1,0 +1,24 @@
+# Render Blueprint — deploy the backend as a free web service.
+services:
+  - type: web
+    name: khetsense-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OPENWEATHER_API_KEY
+        sync: false
+      - key: DATA_GOV_API_KEY
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: DB_PATH
+        value: /var/data/khetsense.sqlite
+    disk:
+      name: khetsense-data
+      mountPath: /var/data
+      sizeGB: 1
